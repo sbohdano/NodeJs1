@@ -5,6 +5,7 @@ const app = express();
 const fs = require('fs');
 const multer = require('multer');
 const cors = require('cors')
+const parseData = require('./scripts/parseData');
 
 const hbs = exhbs.create({
     defaultLayout: 'main',
@@ -30,9 +31,13 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
+// Парсимо дані
+const parsedData = parseData();
 
 app.get('/', (req, res) => { 
-     res.render('main');
+    res.render('main',{
+        users: parsedData // Передаємо масив користувачів
+    });
 })
 
 app.post('/api/submit', upload.single('file'), (req, res) => {
@@ -48,14 +53,44 @@ app.post('/api/submit', upload.single('file'), (req, res) => {
     console.log(`Name: ${name}`);
     console.log(`Age: ${age}`);
     console.log(`Bio: ${bio}`);
-    const info = `{"Name": "${name}" ,"Age": "${age}", "Bio": "${bio}"}*`;
 
-    fs.appendFile('data.json', info, function (err) {
-        if (err) throw err;
-        console.log('Saved!');
-    })
+    // Створення об'єкта для нового користувача
+    const newUser = { Name: name, Age: age, Bio: bio };
 
-    
+    // Читання існуючого файлу data.json
+    fs.readFile('data.json', 'utf8', (err, data) => {
+        if (err) {
+            console.error('Error reading file:', err);
+            return res.status(500).send('Error reading file');
+        }
+
+        let users = [];
+
+        // Якщо файл не порожній, парсимо його
+        if (data) {
+            try {
+                const parsedData = JSON.parse(data);
+                users = parsedData.data || []; // Беремо масив з існуючих даних
+            } catch (parseErr) {
+                console.error('Error parsing JSON:', parseErr);
+                return res.status(500).send('Error parsing JSON');
+            }
+        }
+
+        // Додаємо нового користувача
+        users.push(newUser);
+
+        // Записуємо оновлений масив назад у файл
+        const updatedData = JSON.stringify({ data: users }, null, 2);
+        fs.writeFile('data.json', updatedData, (writeErr) => {
+            if (writeErr) {
+                console.error('Error writing file:', writeErr);
+                return res.status(500).send('Error writing file');
+            }
+            console.log('Saved!');
+            res.status(200).send('User data saved successfully!');
+        });
+    });
 });
 
 app.get('/list',(req, res) => {

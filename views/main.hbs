@@ -2,15 +2,20 @@
     <main>
         <div class="container">
             <p id="demo"></p>
+            <h1>Список користувачів</h1>
+            
             <section class="mainsection">
+
+                {{#each users}}
                 <div class="petBlock">
                     <div class="photo">
-                        <img  class="photoimg" src="img/logo.png" alt="">
+                        <img class="photoimg" src="img/logo.png" alt="">
                     </div>
-                    <h2>Ім'я</h2>
-                    <h3>Вік</h3>
-                    <p>Біографія</p>
+                    <h2>Ім'я: {{this.Name}} </h2>
+                    <h3>Вік: {{this.Age}}</h3>
+                    <p>Біографія: {{this.Bio}}</p>
                 </div>
+                {{/each}}
             </section>
             <section>
                 <div class="container">
@@ -24,7 +29,7 @@
 
                         <div class="wrapper">
                             <div class="input-data">
-                                <input type="text" style="border: none;" class="nameinput"  required>
+                                <input type="text" style="border: none;" class="nameinput" required>
                                 <label>Ім'я</label>
                             </div>
                         </div>
@@ -32,7 +37,7 @@
 
                         <div class="wrapper">
                             <div class="input-data">
-                                <input type="text" style="border: none;"  class="ageinput"  required>
+                                <input type="text" style="border: none;" class="ageinput" required>
                                 <label>Вік</label>
                             </div>
                         </div>
@@ -46,9 +51,11 @@
                         <input type="file" id="fileInput" accept="image/*" class="inputac"><br>
                         <button type="submit" class="sent">Відправити</button>
                     </div>
+
                 </div>
             </section>
         </div>
+
     </main>
     <script src="js/animal.js"></script>
 </body>
