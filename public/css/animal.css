@@ -1,0 +1,249 @@
+* {
+    margin: 0;
+    text-decoration: none;
+    list-style-type: none;
+    padding: 0;
+    color: inherit;
+    font-family: "Roboto", sans-serif;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+
+body {
+    background-image: url(img/body.png);
+}
+/* header */
+
+.headerContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header {
+    width: 100%;
+    height: 100px;
+    box-shadow: rgb(41 139 45) 0px 3px 8px;
+
+    display: flex;
+    align-items: center;
+    background-color: #4ed74e;
+}
+
+.logo img {
+    width:180px;
+    height: auto;
+    transform: translateY(5px);
+    cursor: pointer;
+    transition: .5s;
+}
+
+.logo img:hover {
+    transform: scale(1.1) translateY(5px);
+}
+
+ul {
+    display: flex;
+    column-gap: 20px;
+}
+
+li {
+    color: #224999;
+    transition: .5s;
+    font-weight: bold;
+    position: relative;
+}
+
+li::before {
+    content: '';
+    width: 0;
+    position: absolute;
+    height: 2px;
+    left: 0;
+    top: 20px;
+    transition: .5s;
+    background-color: #23417c;
+}
+
+li:hover::before{
+    width: 100%;
+}
+
+li:hover {
+    color: #23417c;
+}
+
+header button {
+    padding: 10px;
+    color: #23417c;
+    font-weight: bold;
+    border: 2px solid #23417c ;
+    border-radius: 15px;
+    background-color: #4ed74e;
+    cursor: pointer;
+    transition: .5s;
+}
+
+header button:hover {
+    background-color:#23417c;
+    color: #4ed74e;
+}
+
+/* main */
+
+.petBlock {
+    width: 60%;
+    width: 60%;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: white;
+    border-radius: 25px;
+    border: 5px solid #23417c;
+    margin-top: 20px;
+    height: 500px;
+}
+
+.photoimg {
+    background-size: contain;
+    margin: 0 auto;
+    border-radius: 15px;
+    width: 500px;
+    margin-top: 50px;
+    height: auto;
+    border:2px solid #224999;
+}
+
+.petBlock h2,
+.petBlock h3,
+.petBlock p {
+    text-align: center;
+    color: #224999;
+}
+
+.petBlock p {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.photo {
+    width: 500px;
+    margin: 0 auto;
+}
+
+
+
+/* addPet */ 
+
+.addblock {
+    width: 500px;
+    height: 500px;
+    text-align: center;
+    border: 5px solid #224999;
+    border-radius: 15px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;background-color: #4ed74e;
+    top: -1142px;
+    transition: .5s;
+    color: #224999;
+    display: block;
+}
+
+.addblock h2,
+.addblock p,
+.addblock input {
+    margin-top: 25px;
+}
+
+.addblock button {
+    padding: 10px;
+    color: #23417c;
+    font-weight: bold;
+    border: 2px solid #23417c ;
+    border-radius: 15px;
+    background-color: #4ed74e;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.addblock button:hover {
+    background-color:#23417c;
+    color: #4ed74e;
+}
+
+.wrapper {
+    width: 250px;
+    padding: 30px;
+    position: relative;
+    left: 100px;
+    border: none !important; 
+}
+
+.wrapper .input-data {
+    height: 40px;
+    width: 100%;
+    position: relative;
+}
+
+.wrapper .input-data input{
+    height: 100%;
+    width: 100%;
+    color: #224999;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border-bottom: 2px solid #224999 !important;
+}
+
+.input-data input:focus ~ label,
+.input-data input:valid ~ label {
+    transform: translateY(-20px);
+}
+
+.wrapper .input-data label{
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    transition: .5s;
+    color:#224999;
+    pointer-events: none;
+}
+
+.close {
+    background-color: #224999;
+    border: 10px;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    border-radius: 0 0 0 10px;
+    margin-bottom: 10px;
+}
+
+.close div {
+    width: 28px;
+    background-color: black;
+    height: 2px;
+    position: relative;
+    left: 7px;
+    top: 16px;
+    transform: rotate(45deg);
+}
+
+.divtwo {
+    transform: rotate(-45deg) !important;
+    top: 15px !important;
+}
+
+
+.inputac {
+    position: relative;
+    left:20px;
+    bottom: 10px;
+}
