@@ -8,11 +8,13 @@
                 {{#each users}}
                 <div class="petBlock">
                     <div class="photo">
-                        <img class="photoimg" src="img/logo.png" alt="">
+                        <img class="photoimg" src='/public/uploads/{{this.Img}}' alt="">
                     </div>
                     <h2>Ім'я: {{this.Name}} </h2>
                     <h3>Вік: {{this.Age}}</h3>
                     <p>Біографія: {{this.Bio}}</p>
+                    <p>шлях до фотографії: {{this.Img}}</p>
+
                 </div>
                 {{/each}}
             </section>

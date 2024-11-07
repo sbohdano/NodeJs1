@@ -26,8 +26,8 @@ sentBTN.addEventListener('click', async function() {
     formData.append('name', nameofpet.value);
     formData.append('age', ageofpet.value);
     formData.append('bio', biopet.value);
-    // Додати файл, якщо потрібно
-    // formData.append('file', InputImg.files[0]);
+    // // Додати файл, якщо потрібно
+    formData.append('file', InputImg.files[0]);
 
     try {
         const response = await fetch('/api/submit', {

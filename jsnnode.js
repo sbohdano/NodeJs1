@@ -22,7 +22,7 @@ app.use(express.json());
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, 'uploads/');
+        cb(null, 'public/uploads/');
     },
     filename: (req, file, cb) => {
         cb(null, Date.now() + path.extname(file.originalname));
@@ -61,9 +61,10 @@ app.get('/', (req, res) => {
 app.post('/api/submit', upload.single('file'), (req, res) => {
     const { name, age, bio } = req.body;
     const file = req.file;
+    let filename = file.filename
 
     if (file) {
-        console.log(`File uploaded: ${file.filename}`);
+        console.log(`File uploaded: ${filename}`);
     } else {
         console.log('No file uploaded');
     }
@@ -73,7 +74,7 @@ app.post('/api/submit', upload.single('file'), (req, res) => {
     console.log(`Bio: ${bio}`);
 
     // Створення об'єкта для нового користувача
-    const newUser = { Name: name, Age: age, Bio: bio };
+    const newUser = { Name: name, Age: age, Bio: bio, Img: filename };
 
     // Читання існуючого файлу data.json
     fs.readFile('data.json', 'utf8', (err, data) => {
