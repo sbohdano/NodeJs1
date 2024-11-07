@@ -35,10 +35,28 @@ const upload = multer({ storage: storage });
 const parsedData = parseData();
 
 app.get('/', (req, res) => { 
-    res.render('main',{
-        users: parsedData // Передаємо масив користувачів
+    fs.readFile('data.json', 'utf8', (err, data) => {
+        if (err) {
+            console.error('Error reading file:', err);
+            return res.status(500).send('Error reading file');
+        }
+        
+        let users = [];
+        if (data) {
+            try {
+                const parsedData = JSON.parse(data);
+                users = parsedData.data || [];
+            } catch (parseErr) {
+                console.error('Error parsing JSON:', parseErr);
+                return res.status(500).send('Error parsing JSON');
+            }
+        }
+        
+        res.render('main', {
+            users: users // Передаємо актуальні дані користувачів
+        });
     });
-})
+});
 
 app.post('/api/submit', upload.single('file'), (req, res) => {
     const { name, age, bio } = req.body;
