@@ -4,7 +4,7 @@
             <p id="demo"></p>
             
             <section class="mainsection">
-
+                <h1>Енциклопедія відвідувачів магічних сновидінь</h1>
                 {{#each users}}
                 <div class="petBlock">
                     <div class="photo">
@@ -18,12 +18,12 @@
             </section>
             <section class="addBlockSection">
                 <div class="container">
-                    <div class="addblock" style="transform: translateY(-50px);">
+                    <div class="addblock">
                         <div class="close">
                             <div></div>
                             <div class="divtwo"></div>
                         </div>
-                        <h2>Покажіть вашого улюбленця світові!</h2>
+                        <h2>Рзкажіть про своїх магічних істот!</h2>
                         <p>Але спочатку заповність анкету</p>
 
                         <div class="wrapper">
@@ -47,7 +47,10 @@
                                 <label>Біографія</label>
                             </div>
                         </div>
-                        <input type="file" id="fileInput" accept="image/*" class="inputac"><br>
+                        <div class="wrapper-for-file_input">
+                            <label for="fileInput">Виберіть Фотографію</label>
+                            <input type="file" id="fileInput" accept="image/*" class="inputac"><br>
+                        </div>
                         <button type="submit" class="sent">Відправити</button>
                     </div>
 

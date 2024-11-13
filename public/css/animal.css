@@ -14,12 +14,13 @@
 
 
 body {
-    background-color: #dda0d2;
+    background-color: #191627;
 }
 /* header */
 
-.headerContainer {
-    width: 1200px;
+header .container {
+    width: 100%;
+    padding: 0 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -28,10 +29,10 @@ body {
 header {
     width: 100%;
     height: 100px;
-    box-shadow:#91407e  0px 3px 11px;
+    box-shadow:#68597d  0px 7px 26px;
     display: flex;
     align-items: center;
-    background-color: #91407e;
+    background-color: #5e548e;
 }
 
 .logo img {
@@ -74,37 +75,51 @@ li:hover::before{
 }
 
 li:hover {
-    color: #23417c;
+    color: #5e548e;
 }
 
 header button {
-    padding: 10px;
-    color: #23417c;
+    padding: 15px;
+    color: #68597d;
     font-weight: bold;
-    border: 2px solid #23417c ;
     border-radius: 15px;
-    background-color: #4ed74e;
+    background-color: #191627;
     cursor: pointer;
     transition: .5s;
+    border:  none;
 }
 
 header button:hover {
-    background-color:#23417c;
-    color: #4ed74e;
+    background-color:#191627;
+    transform: scale(1.02);
 }
 
 /* main */
 
-.petBlock {
-    width: 60%;
-    width: 60%;
+.mainsection h1 {
     margin: 0 auto;
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    color: #191627;
+    font-size: 22px;
+    background-color: #5e548e;
+    border-radius:25px ;
+    max-width: 500px;
+    box-shadow:#68597d  0px 7px 26px;
+}
+
+
+.petBlock {
+    width: 40%;
+    margin: 0 auto;
+    padding: 10px 40px;
     overflow: hidden;
-    background-color: white;
+    background-color: #5e548e;
     border-radius: 25px;
-    border: 5px solid #23417c;
     margin-top: 20px;
-    height: 500px;
+    box-shadow:#68597d  0px 7px 26px;
+    min-height: 500px;
 }
 
 .photoimg {
@@ -114,23 +129,24 @@ header button:hover {
     width: 300px;
     margin-top: 30px;
     height: auto;
-    border:2px solid #224999;
+    border:2px solid #191627;
 }
 
 .petBlock h2,
 .petBlock h3,
 .petBlock p {
     text-align: center;
-    color: #224999;
+    color: #191627;
 }
 
 .petBlock p {
     margin-top: 20px;
     font-size: 16px;
+    font-weight: 500;
 }
 
 .photo {
-    width: 500px;
+    width: 40%;
     margin: 0 auto;
     display: flex;
     justify-content: center;
@@ -148,39 +164,51 @@ header button:hover {
 
 .addblock {
     width: 500px;
-    height: 500px;
+    height: 520px;
     text-align: center;
-    border: 5px solid #224999;
+    border: 5px solid ;
     border-radius: 15px;
     margin: 0 auto;
     position: absolute;
     top: -540px;
-    z-index: 2;background-color: #4ed74e;
+    box-shadow:#5e548e  0px 7px 26px;
+    z-index: 2;
+    background-color: #5e548e;
     transition: .5s;
-    color: #224999;
+    color: #191627;
+    transform: translateY(-50px);
     display: none;
 }
 
-.addblock h2,
 .addblock p,
 .addblock input {
     margin-top: 25px;
 }
 
+.addblock h2 {
+    margin-top: 35px;
+}
+
 .addblock button {
     padding: 10px;
-    color: #23417c;
+    color: #5e548e;
     font-weight: bold;
-    border: 2px solid #23417c ;
+    border: 2px solid #191627 ;
     border-radius: 15px;
-    background-color: #4ed74e;
+    background-color: #191627;
     cursor: pointer;
     transition: .5s;
+    position: relative;
+    top: 40px;
 }
 
 .addblock button:hover {
-    background-color:#23417c;
-    color: #4ed74e;
+    background-color:#5e548e;
+    color: #191627;
+}
+
+.petBlock h1{
+    margin-top: 20px !important;
 }
 
 .wrapper {
@@ -200,11 +228,11 @@ header button:hover {
 .wrapper .input-data input{
     height: 100%;
     width: 100%;
-    color: #224999;
+    color: #191627;
     border: none;
     outline: none;
     background-color: transparent;
-    border-bottom: 2px solid #224999 !important;
+    border-bottom: 2px solid #191627 !important;
 }
 
 .input-data input:focus ~ label,
@@ -217,12 +245,12 @@ header button:hover {
     bottom: -10px;
     left: 0;
     transition: .5s;
-    color:#224999;
+    color:#191627;
     pointer-events: none;
 }
 
 .close {
-    background-color: #224999;
+    background-color: #191627;
     border: 10px;
     width: 40px;
     height: 40px;
@@ -235,7 +263,7 @@ header button:hover {
 
 .close div {
     width: 28px;
-    background-color: black;
+    background-color:#5e548e;
     height: 2px;
     position: relative;
     left: 7px;
@@ -246,6 +274,34 @@ header button:hover {
 .divtwo {
     transform: rotate(-45deg) !important;
     top: 15px !important;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.wrapper-for-file_input label {
+    padding: 10px;
+    border-radius: 15px;
+    background-color: #191627;
+    color: #5e548e;
+    position: relative;
+    transition: .5s;
+    border:2px solid #191627;
+    top: 20px;
+    cursor: pointer;
+}  
+
+.wrapper-for-file_input label:hover {
+    background-color:#5e548e;
+    border:2px solid #191627;
+    color: #191627;
+}   
+
+.wrapper-for-file_input label:active {
+    background-color:#5e548e;
+    border:2px solid #191627;
+    color: #191627;
 }
 
 

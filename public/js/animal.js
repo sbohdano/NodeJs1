@@ -16,13 +16,14 @@ addButton.addEventListener('click', function() {
 
 // Закриваємо блок без збереження
 closePage.addEventListener('click', function() {
-    AddBlock.style.transform = 'translateY(-100px)';
     AddBlock.style.display = 'none';
 });
 
 // Відправка даних на сервер
 sentBTN.addEventListener('click', async function() {
     const formData = new FormData();
+    AddBlock.style.transform = 'translateY(500px)';
+    AddBlock.style.display = 'none';
     formData.append('name', nameofpet.value);
     formData.append('age', ageofpet.value);
     formData.append('bio', biopet.value);
@@ -50,5 +51,6 @@ sentBTN.addEventListener('click', async function() {
     } catch (error) {
         console.error('Ошибка:', error);
     }
+    location.reload();
 });
 
