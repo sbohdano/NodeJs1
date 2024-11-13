@@ -43,6 +43,7 @@ sentBTN.addEventListener('click', async function() {
             nameofpet.value = '';
             ageofpet.value = '';
             biopet.value = '';
+            AddBlock.style.display = 'none';
         } else {
             console.error('Помилка:', result.message);
         }

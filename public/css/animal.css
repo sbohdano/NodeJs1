@@ -8,7 +8,7 @@
 }
 
 .container {
-    width: 1200px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -19,7 +19,7 @@ body {
 /* header */
 
 .headerContainer {
-    width: 100%;
+    width: 1200px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -112,8 +112,8 @@ header button:hover {
     background-size: contain;
     margin: 0 auto;
     border-radius: 15px;
-    width: 500px;
-    margin-top: 50px;
+    width: 300px;
+    margin-top: 30px;
     height: auto;
     border:2px solid #224999;
 }
@@ -133,11 +133,19 @@ header button:hover {
 .photo {
     width: 500px;
     margin: 0 auto;
+    display: flex;
+    justify-content: center;
 }
 
 
 
 /* addPet */ 
+
+.addBlockSection .container {
+    justify-content: center;
+    max-width: 500px;
+    display: flex;
+}
 
 .addblock {
     width: 500px;
@@ -146,12 +154,12 @@ header button:hover {
     border: 5px solid #224999;
     border-radius: 15px;
     margin: 0 auto;
-    position: relative;
+    position: absolute;
+    top: -540px;
     z-index: 2;background-color: #4ed74e;
-    top: -1142px;
     transition: .5s;
     color: #224999;
-    display: block;
+    display: none;
 }
 
 .addblock h2,
