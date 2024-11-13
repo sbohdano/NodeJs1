@@ -14,7 +14,7 @@
 
 
 body {
-    background-image: url("img/body.png");
+    background-color: #dda0d2;
 }
 /* header */
 
@@ -28,11 +28,10 @@ body {
 header {
     width: 100%;
     height: 100px;
-    box-shadow: rgb(41 139 45) 0px 3px 8px;
-
+    box-shadow:#91407e  0px 3px 11px;
     display: flex;
     align-items: center;
-    background-color: #4ed74e;
+    background-color: #91407e;
 }
 
 .logo img {
