@@ -2,7 +2,11 @@
     <main>
         <div class="container">
             <p id="demo"></p>
-            
+            <div id="myBtn" title="Back to top">
+                <i>
+                    <img src="img/arrowtothetop.png" alt="">
+                </i>
+            </div>
             <section class="mainsection">
                 <h1>Енциклопедія відвідувачів магічних сновидінь</h1>
                 {{#each users}}
@@ -60,4 +64,22 @@
 
     </main>
     <script src="js/animal.js"></script>
+    <script>
+        jQuery(document).ready(function(){   
+            jQuery(window).scroll(function () {
+                if (jQuery(this).scrollTop() > 600) {
+                    jQuery('#myBtn').css('opacity', '1');
+                } else {
+                    jQuery('#myBtn').css('opacity', '0');
+                }
+            });
+
+            jQuery('#myBtn').click(function () {
+                jQuery('body,html').animate({
+                    scrollTop: 0
+                }, 800);
+                return false;
+            });
+        });
+</script>
 </body>
